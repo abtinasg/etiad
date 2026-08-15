@@ -1,0 +1,204 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-primary: #174c45;
+  --color-primary-hover: #123e38;
+  --color-primary-light: #1e5d55;
+  --color-sage: #ddece7;
+  --color-sage-light: #eff6f3;
+  --color-bg-warm: #fafaf7;
+  --color-surface: #ffffff;
+  --color-text: #25302e;
+  --color-text-secondary: #67716e;
+  --color-border: #dfe7e4;
+  --color-accent: #c89b4b;
+  --color-accent-light: #d4ad6a;
+  --font-sans: "Vazirmatn", "Tahoma", sans-serif;
+  --radius-card: 16px;
+  --radius-btn: 12px;
+}
+
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/fonts/webfonts/Vazirmatn-Regular.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/fonts/webfonts/Vazirmatn-Medium.woff2")
+    format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/fonts/webfonts/Vazirmatn-Bold.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/fonts/webfonts/Vazirmatn-ExtraBold.woff2")
+    format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg-warm);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10000;
+  padding: 0.5rem 1rem;
+  background: var(--color-primary);
+  color: white;
+  border-radius: 8px;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+.prose-medical {
+  max-width: 760px;
+}
+
+.prose-medical p {
+  margin-bottom: 1.25rem;
+  color: var(--color-text-secondary);
+}
+
+.prose-medical h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.prose-medical h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.section-padding {
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+/* Mobile-first image containers */
+.img-hero-wrap {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  max-height: 13.75rem;
+}
+
+@media (min-width: 640px) {
+  .img-hero-wrap {
+    aspect-ratio: 4 / 3;
+    max-height: 17.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .img-hero-wrap {
+    aspect-ratio: 4 / 5;
+    max-height: none;
+  }
+}
+
+.img-hero {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 58%;
+}
+
+@media (min-width: 1024px) {
+  .img-hero {
+    object-position: center 62%;
+    transform: scale(1.15);
+  }
+}
+
+.img-portrait {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 28%;
+}
+
+@media (min-width: 1024px) {
+  .img-portrait {
+    transform: scale(1.12);
+    object-position: center 24%;
+  }
+}
+
+.img-building {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+.img-gallery {
+  width: 100%;
+  height: 11rem;
+  object-fit: cover;
+}
+
+@media (min-width: 640px) {
+  .img-gallery {
+    height: 13rem;
+  }
+}

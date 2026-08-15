@@ -1,0 +1,25 @@
+{
+  "name": "کلینیک ترک اعتیاد خورشید مشهد",
+  "short_name": "خورشید",
+  "description": "مرکز درمان علمی و محرمانه اختلالات مصرف مواد در مشهد",
+  "lang": "fa-IR",
+  "dir": "rtl",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAFAF7",
+  "theme_color": "#174C45",
+  "icons": [
+    {
+      "src": "/images/khorshid-clinic-logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/khorshid-clinic-logo-full.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
