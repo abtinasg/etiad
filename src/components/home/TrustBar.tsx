@@ -1,6 +1,6 @@
 const items = [
   { title: "۲۰ سال تجربه", subtitle: "نزدیک به دو دهه فعالیت", needsVerification: true },
-  { title: "تیم چندتخصصی", subtitle: "پزشک، روان‌شناس و مشاور" },
+  { title: "مجوز رسمی", subtitle: "وزارت بهداشت و درمان" },
   { title: "حفظ محرمانگی", subtitle: "مدیریت اطلاعات مراجعان" },
   { title: "وکیل‌آباد مشهد", subtitle: "موقعیت مناسب در مشهد" },
 ];

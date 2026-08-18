@@ -30,7 +30,7 @@ export default function FAQPage() {
         <Breadcrumb items={[{ label: "خانه", href: "/" }, { label: "سوالات متداول" }]} />
         <SectionHeader
           title="سوالات متداول"
-          description="پاسخ به پرسش‌های رایج درباره مراجعه و خدمات کلینیک. برخی پاسخ‌ها پس از تأیید کلینیک تکمیل می‌شوند."
+          description="پاسخ به پرسش‌های رایج درباره مدارک مراجعه، درمان سرپایی، ساعات حضور پزشک، هزینه و انواع مواد قابل درمان."
           centered
         />
         <FAQAccordion items={faqItems} />

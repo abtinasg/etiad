@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { siteConfig } from "@/lib/site";
 import { Button } from "@/components/ui/Button";
 
 const topics = [
@@ -16,8 +17,11 @@ export function FamilySection() {
             <h2 id="family-title" className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-primary mb-6">
               اگر یکی از اعضای خانواده درگیر مصرف مواد است
             </h2>
-            <p className="text-lg text-text-secondary leading-relaxed mb-8">
+            <p className="text-lg text-text-secondary leading-relaxed mb-4">
               لازم نیست برای گرفتن اطلاعات اولیه منتظر تصمیم قطعی فرد بمانید. خانواده می‌تواند ابتدا درباره نحوه برخورد، شرایط مراجعه و مسیرهای موجود سوال کند.
+            </p>
+            <p className="text-base font-medium text-primary leading-relaxed mb-8">
+              {siteConfig.mission}
             </p>
             <Button href="/family-guide" variant="primary" size="lg">
               راهنمای خانواده

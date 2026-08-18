@@ -3,6 +3,7 @@ import { siteConfig } from "@/lib/site";
 import { Container, SectionHeader } from "@/components/ui/Section";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { Button } from "@/components/ui/Button";
+import { LicensesList } from "@/components/ui/LicensesList";
 import { JsonLd, breadcrumbJsonLd } from "@/components/seo/JsonLd";
 
 export const metadata = createPageMetadata({
@@ -27,10 +28,21 @@ export default function AboutPage() {
           <h1 className="text-3xl sm:text-4xl font-extrabold text-primary mb-6">
             درباره کلینیک خورشید مشهد
           </h1>
-          <p className="text-lg text-text-secondary leading-relaxed mb-8">
+          <p className="text-lg text-text-secondary leading-relaxed mb-4">
             کلینیک ترک اعتیاد خورشید یک مرکز درمان اختلالات مصرف مواد در مشهد است که
             خدمات ارزیابی، مشاوره و درمان را در فضایی آرام و حرفه‌ای ارائه می‌دهد.
           </p>
+          <p className="text-lg font-medium text-primary leading-relaxed mb-8">
+            {siteConfig.mission}
+          </p>
+
+          <div className="mb-12">
+            <SectionHeader
+              title="مدارک و مجوزها"
+              description={`کلینیک خورشید دارای پروانه مطب، مجوز MMT و پروانه بهره‌برداری ترک اعتیاد از ${siteConfig.licensesIssuer} است.`}
+            />
+            <LicensesList />
+          </div>
 
           <SectionHeader
             title="موقعیت و دسترسی"
@@ -67,7 +79,7 @@ export default function AboutPage() {
           </div>
 
           <p className="mt-8 text-sm text-text-secondary">
-            تجربه نزدیک به ۲۰ سال و جزئیات مجوز {siteConfig.needsVerification} است.
+            کلینیک خورشید با نزدیک به ۲۰ سال تجربه، تحت مجوزهای رسمی {siteConfig.licensesIssuer} فعالیت می‌کند.
           </p>
         </article>
       </Container>

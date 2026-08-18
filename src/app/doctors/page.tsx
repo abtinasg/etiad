@@ -9,7 +9,7 @@ import { JsonLd, breadcrumbJsonLd } from "@/components/seo/JsonLd";
 export const metadata = createPageMetadata({
   title: "تیم درمان | کلینیک ترک اعتیاد خورشید مشهد",
   description:
-    "تیم پزشکی و درمانی کلینیک خورشید مشهد. اطلاعات پزشکان و متخصصان پس از دریافت از کلینیک تکمیل می‌شود.",
+    "تیم درمان کلینیک خورشید مشهد به سرپرستی دکتر سید هاشم سیادتی، پزشک دوره‌دیده درمان اعتیاد با نزدیک به ۲۰ سال تجربه.",
   path: "/doctors",
 });
 
@@ -26,7 +26,7 @@ export default function DoctorsPage() {
         <Breadcrumb items={[{ label: "خانه", href: "/" }, { label: "تیم درمان" }]} />
         <SectionHeader
           title="تیم درمان کلینیک خورشید"
-          description="اطلاعات پزشکان، روان‌شناسان و مشاوران پس از دریافت از کلینیک تکمیل می‌شود. هر متخصص صفحه پروفایل جداگانه خواهد داشت."
+          description="پزشک درمانگر اعتیاد، روانشناس و مشاور، و پرستار کلینیک خورشید."
         />
         <div className="max-w-5xl">
           {doctors.map((doctor) => (
@@ -51,7 +51,13 @@ export default function DoctorsPage() {
                   <p className="text-sm font-semibold text-accent">{doctor.role ?? doctor.title}</p>
                   <h2 className="mt-2 text-2xl font-extrabold text-primary">{doctor.name}</h2>
                   <p className="mt-1 text-text-secondary">{doctor.specialty}</p>
-                  <p className="mt-5 text-sm leading-relaxed text-text-secondary sm:text-base">{doctor.bio}</p>
+                  <ul className="mt-4 space-y-1 text-sm text-text-secondary">
+                    {doctor.education && <li>تحصیلات: {doctor.education}</li>}
+                    {doctor.experience && <li>سوابق: {doctor.experience}</li>}
+                    {doctor.registrationNumber && (
+                      <li>شماره نظام پزشکی: {doctor.registrationNumber}</li>
+                    )}
+                  </ul>
                   <Link
                     href={`/doctors/${doctor.slug}`}
                     className="mt-6 inline-block text-sm font-semibold text-accent transition-colors hover:text-primary"

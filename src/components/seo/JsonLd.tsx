@@ -48,9 +48,10 @@ export function organizationJsonLd() {
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: 36.2972,
-      longitude: 59.6067,
+      latitude: siteConfig.geo.latitude,
+      longitude: siteConfig.geo.longitude,
     },
+    hasMap: siteConfig.mapsUrl,
     areaServed: {
       "@type": "City",
       name: "مشهد",
@@ -164,6 +165,7 @@ export function physicianJsonLd(doctor: {
   specialty: string;
   slug: string;
   image?: string;
+  identifier?: string;
 }) {
   return {
     "@context": "https://schema.org",
@@ -172,6 +174,7 @@ export function physicianJsonLd(doctor: {
     jobTitle: doctor.title,
     medicalSpecialty: doctor.specialty,
     image: doctor.image ? `${siteConfig.url}${doctor.image}` : undefined,
+    identifier: doctor.identifier,
     worksFor: clinicBase(),
     memberOf: clinicBase(),
     url: `${siteConfig.url}/doctors/${doctor.slug}`,

@@ -4,9 +4,9 @@ import { clinicImages } from "@/lib/images";
 import { Button } from "@/components/ui/Button";
 
 const trustItems = [
-  { text: "نزدیک به ۲۰ سال تجربه", needsVerification: true },
-  { text: "دارای مجوز رسمی", needsVerification: true },
-  { text: "پزشک، روان‌شناس و تیم درمان", needsVerification: true },
+  { text: "نزدیک به ۲۰ سال تجربه" },
+  { text: "دارای مجوز رسمی از وزارت بهداشت و درمان" },
+  { text: "پزشک درمانگر، روانشناس و پرستار" },
 ];
 
 export function HeroSection() {
@@ -24,6 +24,9 @@ export function HeroSection() {
             </h1>
             <p className="text-lg text-text-secondary leading-relaxed mb-4 max-w-xl">
               در کلینیک خورشید، شرایط هر مراجعه‌کننده ابتدا بررسی می‌شود تا مسیر درمان با توجه به وضعیت فرد و نظر تیم درمان مشخص شود.
+            </p>
+            <p className="text-base font-medium text-primary leading-relaxed mb-4 max-w-xl">
+              {siteConfig.mission}
             </p>
             <p className="text-base text-text-secondary leading-relaxed mb-8 max-w-xl">
               خانواده‌ها نیز می‌توانند برای دریافت اطلاعات اولیه با کلینیک تماس بگیرند.

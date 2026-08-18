@@ -38,8 +38,15 @@ export function Button({
 
   if (href) {
     if (external || href.startsWith("tel:") || href.startsWith("http")) {
+      const isHttp = href.startsWith("http");
       return (
-        <a href={href} className={classes}>
+        <a
+          href={href}
+          className={classes}
+          {...(isHttp || external
+            ? { target: "_blank", rel: "noopener noreferrer" }
+            : {})}
+        >
           {children}
         </a>
       );

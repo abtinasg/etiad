@@ -43,6 +43,7 @@ export default async function DoctorDetailPage({ params }: Props) {
             specialty: doctor.specialty,
             slug: doctor.slug,
             image: doctor.image,
+            identifier: doctor.registrationNumber,
           })}
         />
         <JsonLd
@@ -99,7 +100,7 @@ export default async function DoctorDetailPage({ params }: Props) {
                 <div className="rounded-[16px] overflow-hidden border border-border">
                   <Image
                     src="/images/khorshid-clinic-doctor-office.jpg"
-                    alt="دکتر کیومرث افسری در اتاق مشاوره کلینیک خورشید"
+                    alt="دکتر سید هاشم سیادتی در اتاق مشاوره کلینیک خورشید"
                     width={600}
                     height={800}
                     className="w-full h-auto object-cover max-h-[320px] sm:max-h-[480px]"
@@ -119,8 +120,14 @@ export default async function DoctorDetailPage({ params }: Props) {
               <dd className="text-text">{doctor.experience ?? "[نیازمند تأیید مشتری]"}</dd>
             </div>
             <div>
-              <dt className="text-sm font-semibold text-text-secondary">شماره نظام / ثبت</dt>
+              <dt className="text-sm font-semibold text-text-secondary">شماره نظام پزشکی</dt>
               <dd className="text-text">{doctor.registrationNumber ?? "[نیازمند تأیید مشتری]"}</dd>
+            </div>
+            <div>
+              <dt className="text-sm font-semibold text-text-secondary">مدارک کلینیک</dt>
+              <dd className="text-text">
+                پروانه مطب، مجوز MMT و پروانه بهره‌برداری ترک اعتیاد از {siteConfig.licensesIssuer}
+              </dd>
             </div>
             <div>
               <dt className="text-sm font-semibold text-text-secondary">نقش در کلینیک</dt>

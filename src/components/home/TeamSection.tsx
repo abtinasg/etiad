@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { doctors } from "@/lib/data/doctors";
+import { siteConfig } from "@/lib/site";
 import { SectionHeader } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 
@@ -14,9 +15,23 @@ export function TeamSection() {
           id="team-title"
           label="تیم درمان"
           title="تیم درمان کلینیک خورشید"
-          description="ارزیابی و برنامه‌ریزی درمانی تحت نظر پزشک متخصص کلینیک انجام می‌شود."
+          description="ارزیابی و برنامه‌ریزی درمانی با همکاری پزشک درمانگر اعتیاد، روانشناس و مشاور، و پرستار انجام می‌شود."
           centered
         />
+
+        <ul className="grid sm:grid-cols-3 gap-4 max-w-4xl mx-auto mb-8">
+          {siteConfig.teamRoles.map((role) => (
+            <li
+              key={role}
+              className="rounded-[16px] border border-border bg-bg-warm p-5 text-center"
+            >
+              <p className="font-bold text-primary">{role}</p>
+            </li>
+          ))}
+        </ul>
+        <p className="text-center text-sm sm:text-base font-semibold text-primary mb-10">
+          {siteConfig.licenseStatement}
+        </p>
 
         {doctor && (
           <article className="max-w-5xl mx-auto overflow-hidden rounded-[24px] border border-border bg-bg-warm shadow-lg">
@@ -45,11 +60,13 @@ export function TeamSection() {
                 </span>
                 <h3 className="text-lg font-extrabold text-primary sm:text-2xl lg:text-3xl">{doctor.name}</h3>
                 <p className="mt-1 text-sm font-medium text-text sm:text-base">{doctor.specialty}</p>
-                {doctor.bio && (
-                  <p className="mt-3 max-w-xl text-xs leading-relaxed text-text-secondary sm:mt-4 sm:text-sm lg:text-base">
-                    {doctor.bio}
-                  </p>
-                )}
+                <ul className="mt-3 space-y-1 text-xs text-text-secondary sm:mt-4 sm:text-sm">
+                  {doctor.education && <li>تحصیلات: {doctor.education}</li>}
+                  {doctor.experience && <li>سوابق: {doctor.experience}</li>}
+                  {doctor.registrationNumber && (
+                    <li>شماره نظام پزشکی: {doctor.registrationNumber}</li>
+                  )}
+                </ul>
                 <div className="mt-4 flex flex-wrap items-center gap-3 sm:mt-8 sm:gap-4">
                   <Button href={`/doctors/${doctor.slug}`} variant="primary" size="sm" className="sm:!px-5 sm:!py-3">
                     مشاهده پروفایل

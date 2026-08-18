@@ -18,7 +18,9 @@ export function StickyMobileCTA() {
           تماس
         </a>
         <a
-          href="/contact#map"
+          href={siteConfig.mapsDirectionsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
           className="flex items-center justify-center gap-2 py-3.5 bg-sage text-primary font-bold rounded-[12px] transition-colors hover:bg-sage-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">

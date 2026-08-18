@@ -5,6 +5,7 @@ import { clinicImages } from "@/lib/images";
 import { Container } from "@/components/ui/Section";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { Button } from "@/components/ui/Button";
+import { ClinicMap } from "@/components/ui/ClinicMap";
 import { JsonLd, breadcrumbJsonLd } from "@/components/seo/JsonLd";
 
 export const metadata = createPageMetadata({
@@ -55,7 +56,7 @@ export default function ContactPage() {
               <Button href={siteConfig.phoneTel} variant="primary" size="lg">
                 تماس با {siteConfig.phoneDisplay}
               </Button>
-              <Button href="#map" variant="outline" size="lg">
+              <Button href={siteConfig.mapsDirectionsUrl} variant="outline" size="lg">
                 مسیریابی
               </Button>
             </div>
@@ -63,13 +64,7 @@ export default function ContactPage() {
 
           <div id="map" className="space-y-6">
             <div className="rounded-[24px] overflow-hidden border border-border h-44 sm:h-52 lg:min-h-[280px] relative">
-              <Image
-                src={clinicImages.buildingExterior.src}
-                alt={clinicImages.buildingExterior.alt}
-                fill
-                className="img-building"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
+              <ClinicMap />
             </div>
             <div className="rounded-[16px] overflow-hidden border border-border relative h-40 sm:aspect-video sm:h-auto">
               <Image

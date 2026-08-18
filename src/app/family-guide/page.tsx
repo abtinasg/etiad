@@ -28,9 +28,12 @@ export default function FamilyGuidePage() {
           <h1 className="text-3xl sm:text-4xl font-extrabold text-primary mb-6">
             راهنمای خانواده فرد درگیر مصرف مواد
           </h1>
-          <p className="text-lg text-text-secondary leading-relaxed mb-10">
+          <p className="text-lg text-text-secondary leading-relaxed mb-4">
             خانواده می‌تواند برای دریافت اطلاعات اولیه درباره شرایط مراجعه، نحوه برخورد و
             مسیرهای موجود با کلینیک تماس بگیرد. لازم نیست منتظر تصمیم قطعی فرد بمانید.
+          </p>
+          <p className="text-lg font-medium text-primary leading-relaxed mb-10">
+            {siteConfig.mission}
           </p>
 
           <section id="talking" className="mb-12">
@@ -84,7 +87,7 @@ export default function FamilyGuidePage() {
             <h2 className="text-xl font-bold text-primary mb-3">مشاوره خانواده در کلینیک خورشید</h2>
             <p className="text-text-secondary mb-6 leading-relaxed">
               برای اطلاعات بیشتر درباره
-              <Link href="/services/family-counseling" className="text-primary font-semibold mx-1 hover:text-accent">
+              <Link href="/services/family-therapy" className="text-primary font-semibold mx-1 hover:text-accent">
                 مشاوره خانواده
               </Link>
               با کلینیک تماس بگیرید.

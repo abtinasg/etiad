@@ -1,7 +1,6 @@
-import Image from "next/image";
 import { siteConfig } from "@/lib/site";
-import { clinicImages } from "@/lib/images";
 import { Button } from "@/components/ui/Button";
+import { ClinicMap } from "@/components/ui/ClinicMap";
 
 export function LocationSection() {
   return (
@@ -35,7 +34,7 @@ export function LocationSection() {
               </div>
             </dl>
             <div className="flex flex-wrap gap-3 mt-8">
-              <Button href="/contact#map" variant="outline">
+              <Button href={siteConfig.mapsDirectionsUrl} variant="outline">
                 مسیریابی
               </Button>
               <Button href={siteConfig.phoneTel} variant="primary">
@@ -44,13 +43,7 @@ export function LocationSection() {
             </div>
           </div>
           <div id="map" className="relative h-44 sm:h-52 lg:h-auto lg:min-h-[280px]">
-            <Image
-              src={clinicImages.buildingExterior.src}
-              alt={clinicImages.buildingExterior.alt}
-              fill
-              className="img-building"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
+            <ClinicMap />
           </div>
         </div>
       </div>

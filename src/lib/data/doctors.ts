@@ -18,17 +18,17 @@ export type Doctor = {
 export const doctors: Doctor[] = [
   {
     slug: "dr-afsari",
-    name: "دکتر کیومرث افسری",
-    title: "پزشک",
+    name: "دکتر سید هاشم سیادتی",
+    title: "پزشک درمانگر اعتیاد و مسئول فنی کلینیک",
     specialty: "درمان اختلالات مصرف مواد",
-    role: "پزشک کلینیک خورشید",
+    role: "پزشک درمانگر اعتیاد و مسئول فنی کلینیک",
     image: clinicImages.doctorPortrait.src,
     imageAlt: clinicImages.doctorPortrait.alt,
     placeholder: false,
-    bio: "اطلاعات تکمیلی سوابق و مدارک پس از دریافت از کلینیک در این صفحه قرار می‌گیرد.",
-    education: "[نیازمند تأیید مشتری]",
-    experience: "[نیازمند تأیید مشتری]",
-    registrationNumber: "[نیازمند تأیید مشتری]",
+    bio: "پزشک دوره‌دیده درمان اعتیاد با نزدیک به ۲۰ سال تجربه. تحصیلات: دکترای پزشکی. شماره نظام پزشکی: ۸۰۰۲۵.",
+    education: "دکترای پزشکی",
+    experience: "پزشک دوره‌دیده درمان اعتیاد با نزدیک به ۲۰ سال تجربه",
+    registrationNumber: "۸۰۰۲۵",
   },
 ];
 

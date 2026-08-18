@@ -1,3 +1,5 @@
+import { siteConfig } from "@/lib/site";
+
 const cards = [
   {
     title: "تجربه درمانی",
@@ -6,7 +8,7 @@ const cards = [
   },
   {
     title: "تیم چندتخصصی",
-    text: "همکاری پزشک، روان‌شناس، مشاور و پرستار.",
+    text: "همکاری پزشک درمانگر اعتیاد، روانشناس و مشاور، و پرستار.",
     needsVerification: true,
   },
   {
@@ -29,6 +31,9 @@ export function WhyKhorshidSection() {
           <h2 id="why-title" className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white leading-tight">
             چرا کلینیک خورشید؟
           </h2>
+          <p className="mt-5 text-base sm:text-lg text-white/85 leading-relaxed">
+            {siteConfig.mission}
+          </p>
         </header>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {cards.map((card) => (

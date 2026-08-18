@@ -43,7 +43,7 @@ export function FAQAccordion({ items }: FAQAccordionProps) {
               hidden={!isOpen}
               className="pb-5"
             >
-              <p className="text-text-secondary leading-relaxed pr-8">
+              <p className="text-text-secondary leading-relaxed pr-8 whitespace-pre-line">
                 {item.answer}
               </p>
             </div>

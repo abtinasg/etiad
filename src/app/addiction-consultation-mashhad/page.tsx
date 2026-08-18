@@ -40,7 +40,7 @@ export default function AddictionConsultationPage() {
 
           <p className="text-text-secondary mb-8">
             اطلاعات بیشتر درباره
-            <Link href="/services/addiction-consultation" className="text-primary font-semibold mx-1 hover:text-accent">
+            <Link href="/services/individual-counseling" className="text-primary font-semibold mx-1 hover:text-accent">
               مشاوره درمان اعتیاد
             </Link>
             در صفحه خدمات کلینیک.

@@ -4,7 +4,7 @@ const cards = [
   {
     title: "برای خودم",
     text: "می‌خواهم درباره شرایط درمان و مراحل شروع آن اطلاعات بگیرم.",
-    href: "/services/addiction-consultation",
+    href: "/services/individual-counseling",
     icon: "user",
   },
   {

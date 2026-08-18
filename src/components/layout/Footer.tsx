@@ -2,10 +2,10 @@ import Link from "next/link";
 import { siteConfig } from "@/lib/site";
 
 const serviceLinks = [
-  { href: "/services/initial-assessment", label: "ارزیابی اولیه" },
-  { href: "/services/addiction-consultation", label: "مشاوره درمان" },
-  { href: "/services/family-counseling", label: "مشاوره خانواده" },
-  { href: "/services/psychology-services", label: "خدمات روان‌شناسی" },
+  { href: "/services/detoxification", label: "سم‌زدایی" },
+  { href: "/services/maintenance-treatment", label: "درمان نگهدارنده" },
+  { href: "/services/individual-counseling", label: "مشاوره فردی" },
+  { href: "/services/family-therapy", label: "خانواده‌درمانی" },
 ];
 
 const guideLinks = [
@@ -23,7 +23,7 @@ export function Footer() {
           <div>
             <span className="text-2xl font-extrabold">{siteConfig.brand}</span>
             <p className="mt-3 text-sm text-white/75 leading-relaxed">
-              مرکز درمان علمی و محرمانه اختلالات مصرف مواد در مشهد
+              {siteConfig.mission}
             </p>
           </div>
 
@@ -68,7 +68,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-white/15 flex flex-col sm:flex-row justify-between gap-4 text-xs text-white/60">
-          <p>© ۱۴۰۴ {siteConfig.name}. تمامی حقوق محفوظ است.</p>
+          <p>© ۱۴۰۵ {siteConfig.name}. تمامی حقوق محفوظ است.</p>
           <div className="flex flex-wrap gap-4">
             <Link href="/about" className="hover:text-white">درباره ما</Link>
             <Link href="/doctors" className="hover:text-white">تیم درمان</Link>

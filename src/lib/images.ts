@@ -37,7 +37,7 @@ export const clinicImages = {
   },
   doctorPortrait: {
     src: "/images/khorshid-clinic-doctor-portrait.jpg",
-    alt: "دکتر کیومرث افسری — پزشک کلینیک خورشید مشهد",
+    alt: "دکتر سید هاشم سیادتی — پزشک کلینیک خورشید مشهد",
     width: 400,
     height: 500,
   },

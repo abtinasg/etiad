@@ -21,7 +21,7 @@ export function ServicesSection() {
           id="services-title"
           label="خدمات درمانی"
           title="خدمات کلینیک خورشید"
-          description="برنامه درمان پس از بررسی شرایط هر مراجعه‌کننده تعیین می‌شود."
+          description="سم‌زدایی، درمان نگهدارنده، مشاوره فردی، گروه‌درمانی، خانواده‌درمانی و پشتیبانی پس از درمان."
         />
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service) => (
