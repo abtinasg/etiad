@@ -3,12 +3,13 @@ import type { BreadcrumbItem } from "@/lib/site";
 
 type BreadcrumbProps = {
   items: BreadcrumbItem[];
+  centered?: boolean;
 };
 
-export function Breadcrumb({ items }: BreadcrumbProps) {
+export function Breadcrumb({ items, centered = false }: BreadcrumbProps) {
   return (
-    <nav aria-label="مسیر صفحه" className="mb-6">
-      <ol className="flex flex-wrap items-center gap-2 text-sm text-text-secondary">
+    <nav aria-label="مسیر صفحه" className={`mb-6 ${centered ? "flex justify-center" : ""}`}>
+      <ol className={`flex flex-wrap items-center gap-2 text-sm text-text-secondary ${centered ? "justify-center" : ""}`}>
         {items.map((item, index) => (
           <li key={index} className="flex items-center gap-2">
             {index > 0 && (

@@ -60,7 +60,7 @@ export default async function ServiceDetailPage({ params }: Props) {
 
   return (
     <div className="section-padding bg-bg-warm">
-      <Container>
+      <Container narrow>
         <JsonLd
           data={serviceJsonLd({
             title: service.title,
@@ -75,21 +75,24 @@ export default async function ServiceDetailPage({ params }: Props) {
             { name: service.title },
           ])}
         />
-        <Breadcrumb
-          items={[
-            { label: "خانه", href: "/" },
-            { label: "خدمات درمانی", href: "/services" },
-            { label: service.title },
-          ]}
-        />
-        <article className="max-w-3xl">
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-primary mb-6">
+        <div className="text-center mb-10">
+          <Breadcrumb
+            items={[
+              { label: "خانه", href: "/" },
+              { label: "خدمات درمانی", href: "/services" },
+              { label: service.title },
+            ]}
+            centered
+          />
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-primary mb-4">
             {service.title} در مشهد
           </h1>
-          <p className="text-lg text-text-secondary leading-relaxed mb-8">
+          <p className="text-lg text-text-secondary leading-relaxed max-w-2xl mx-auto">
             {service.description}
           </p>
+        </div>
 
+        <article className="bg-surface border border-border rounded-[20px] p-6 sm:p-10 shadow-sm">
           <div className="prose-medical mb-10">
             <h2>چه زمانی ارزیابی تخصصی ممکن است لازم باشد؟</h2>
             <p>
@@ -103,16 +106,16 @@ export default async function ServiceDetailPage({ params }: Props) {
             </p>
             <h2>حمایت خانواده</h2>
             <p>
-              خانواده می‌تواند برای دریافت راهنمایی درباره نحوه برخورد و همراهی،
+              خانواده می‌تواند برای دریافت راهنمایی درباره نحوه برخورد و همراهی،{" "}
               <Link href="/family-guide" className="text-primary font-semibold hover:text-accent">
                 راهنمای خانواده
-              </Link>
+              </Link>{" "}
               را مطالعه کند یا با کلینیک تماس بگیرد.
             </p>
           </div>
 
           {service.needsVerification && (
-            <p className="text-sm text-text-secondary bg-sage-light border border-border rounded-[12px] p-4 mb-8">
+            <p className="text-sm text-text-secondary bg-sage-light border border-border rounded-[12px] p-4 mb-8 text-center">
               جزئیات این خدمت {siteConfig.needsVerification} است.
             </p>
           )}
@@ -123,7 +126,7 @@ export default async function ServiceDetailPage({ params }: Props) {
             articleSlugs={relatedArticles.map((article) => article.slug)}
           />
 
-          <div className="mt-10 flex flex-wrap gap-4 text-sm">
+          <div className="mt-10 pt-8 border-t border-border flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm">
             <Link href="/doctors" className="text-primary font-semibold hover:text-accent">
               آشنایی با تیم درمان →
             </Link>

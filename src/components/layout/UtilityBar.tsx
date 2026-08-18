@@ -8,13 +8,7 @@ export function UtilityBar() {
           {siteConfig.shortName}
         </span>
         <div className="flex items-center gap-2 sm:gap-4 text-text-secondary">
-          <span className="hidden sm:inline">{siteConfig.workingHoursResponse}</span>
-          <a
-            href={siteConfig.phoneTel}
-            className="font-semibold text-primary hover:text-primary-hover transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary rounded"
-          >
-            {siteConfig.phoneDisplay}
-          </a>
+          <span>{siteConfig.workingHoursResponse}</span>
         </div>
       </div>
     </div>

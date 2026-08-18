@@ -97,13 +97,13 @@ export default async function DoctorDetailPage({ params }: Props) {
                 <p>{doctor.bio}</p>
               </div>
               {doctor.slug === "dr-afsari" && (
-                <div className="rounded-[16px] overflow-hidden border border-border">
+                <div className="img-office-wrap rounded-[16px] border border-border">
                   <Image
                     src="/images/khorshid-clinic-doctor-office.jpg"
                     alt="دکتر سید هاشم سیادتی در اتاق مشاوره کلینیک خورشید"
-                    width={600}
-                    height={800}
-                    className="w-full h-auto object-cover max-h-[320px] sm:max-h-[480px]"
+                    fill
+                    className="img-office"
+                    sizes="(max-width: 768px) 100vw, 768px"
                   />
                 </div>
               )}

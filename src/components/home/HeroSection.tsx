@@ -39,9 +39,6 @@ export function HeroSection() {
                 آشنایی با روند مراجعه
               </Button>
             </div>
-            <a href={siteConfig.phoneTel} className="block text-2xl font-extrabold text-primary hover:text-accent transition-colors mb-8">
-              {siteConfig.phoneDisplay}
-            </a>
             <ul className="flex flex-wrap gap-4" aria-label="نشان‌های اعتماد">
               {trustItems.map((item) => (
                 <li key={item.text} className="flex items-center gap-2 text-sm font-medium text-text">
@@ -64,17 +61,6 @@ export function HeroSection() {
                 className="img-hero"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
-            </div>
-            <div className="bg-surface rounded-[16px] px-5 py-4 shadow-md border border-border flex items-center gap-3">
-              <div className="w-11 h-11 bg-sage rounded-[12px] flex items-center justify-center text-primary shrink-0">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" strokeWidth="1.5" />
-                </svg>
-              </div>
-              <div>
-                <strong className="block text-sm font-bold text-primary">محیط امن و محرمانه</strong>
-                <span className="text-xs text-text-secondary">اطلاعات شما در امان است</span>
-              </div>
             </div>
           </div>
         </div>

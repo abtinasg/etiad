@@ -35,8 +35,8 @@ export function TeamSection() {
 
         {doctor && (
           <article className="max-w-5xl mx-auto overflow-hidden rounded-[24px] border border-border bg-bg-warm shadow-lg">
-            <div className="grid grid-cols-[6.5rem_1fr] sm:grid-cols-[8.5rem_1fr] lg:grid-cols-[280px_1fr]">
-              <div className="relative bg-primary min-h-[6.5rem] sm:min-h-[8.5rem] lg:min-h-full">
+            <div className="grid grid-cols-[6.5rem_1fr] items-center sm:grid-cols-[8.5rem_1fr] lg:grid-cols-[220px_1fr]">
+              <div className="relative aspect-[3/4] overflow-hidden bg-primary sm:aspect-[4/5] lg:max-h-[280px]">
                 {doctor.placeholder ? (
                   <div className="absolute inset-0 flex items-center justify-center text-white/80 text-xs p-2 text-center">
                     تصویر پزشک
@@ -45,10 +45,9 @@ export function TeamSection() {
                   <Image
                     src={doctor.image!}
                     alt={doctor.imageAlt ?? doctor.name}
-                    width={400}
-                    height={500}
-                    className="absolute inset-0 img-portrait"
-                    sizes="(max-width: 1024px) 120px, 280px"
+                    fill
+                    className="img-portrait"
+                    sizes="(max-width: 1024px) 120px, 220px"
                   />
                 )}
               </div>
