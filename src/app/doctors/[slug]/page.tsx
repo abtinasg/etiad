@@ -35,7 +35,7 @@ export default async function DoctorDetailPage({ params }: Props) {
 
   return (
     <div className="section-padding bg-bg-warm">
-      <Container narrow>
+      <Container>
         <JsonLd
           data={physicianJsonLd({
             name: doctor.name,
@@ -60,8 +60,8 @@ export default async function DoctorDetailPage({ params }: Props) {
             { label: doctor.name },
           ]}
         />
-        <article>
-          <div className="flex flex-col items-center text-center sm:flex-row sm:items-start sm:text-start gap-8 mb-10">
+        <article className="max-w-3xl">
+          <div className="flex flex-col sm:flex-row gap-8 mb-10">
             <div className="relative h-36 w-28 shrink-0 overflow-hidden rounded-[16px] bg-primary sm:h-44 sm:w-32">
               {doctor.image ? (
                 <Image
@@ -97,7 +97,7 @@ export default async function DoctorDetailPage({ params }: Props) {
                 <p>{doctor.bio}</p>
               </div>
               {doctor.slug === "dr-afsari" && (
-                <div className="img-office-wrap mx-auto w-full max-w-xl rounded-[16px] border border-border">
+                <div className="img-office-wrap rounded-[16px] border border-border">
                   <Image
                     src="/images/khorshid-clinic-doctor-office.jpg"
                     alt="دکتر سید هاشم سیادتی در اتاق مشاوره کلینیک خورشید"
