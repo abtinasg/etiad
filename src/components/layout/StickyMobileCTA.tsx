@@ -3,7 +3,7 @@ import { siteConfig } from "@/lib/site";
 export function StickyMobileCTA() {
   return (
     <div
-      className="fixed bottom-0 left-0 right-0 z-40 lg:hidden bg-surface border-t border-border shadow-lg safe-area-pb"
+      className="mobile-sticky-cta fixed bottom-0 left-0 right-0 z-40 lg:hidden bg-surface border-t border-border shadow-lg safe-area-pb"
       role="navigation"
       aria-label="تماس سریع"
     >

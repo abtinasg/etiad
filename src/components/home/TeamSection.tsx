@@ -36,7 +36,7 @@ export function TeamSection() {
         {doctor && (
           <article className="max-w-5xl mx-auto overflow-hidden rounded-[24px] border border-border bg-bg-warm shadow-lg">
             <div className="grid grid-cols-[6.5rem_1fr] items-center sm:grid-cols-[8.5rem_1fr] lg:grid-cols-[220px_1fr]">
-              <div className="relative aspect-[3/4] overflow-hidden bg-primary sm:aspect-[4/5] lg:max-h-[280px]">
+              <div className="relative aspect-square overflow-hidden bg-primary sm:aspect-[5/6] lg:max-h-[200px]">
                 {doctor.placeholder ? (
                   <div className="absolute inset-0 flex items-center justify-center text-white/80 text-xs p-2 text-center">
                     تصویر پزشک
