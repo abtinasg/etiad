@@ -222,6 +222,13 @@ body {
   object-fit: cover;
 }
 
+.img-signage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
 @media (min-width: 640px) {
   .img-gallery {
     height: 13rem;

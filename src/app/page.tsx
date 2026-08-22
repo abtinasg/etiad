@@ -6,6 +6,7 @@ import { AssessmentEducationSection } from "@/components/home/AssessmentEducatio
 import { WhyKhorshidSection } from "@/components/home/WhyKhorshidSection";
 import { TreatmentTimelineSection } from "@/components/home/TreatmentTimelineSection";
 import { TeamSection } from "@/components/home/TeamSection";
+import { AddictionRecoverySection } from "@/components/home/AddictionRecoverySection";
 import { CredentialsSection } from "@/components/home/CredentialsSection";
 import { FamilySection } from "@/components/home/FamilySection";
 import { ArticlesSection } from "@/components/home/ArticlesSection";
@@ -24,6 +25,7 @@ export default function HomePage() {
       <WhyKhorshidSection />
       <TreatmentTimelineSection />
       <TeamSection />
+      <AddictionRecoverySection />
       <CredentialsSection />
       <FamilySection />
       <ArticlesSection />

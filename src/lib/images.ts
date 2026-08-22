@@ -29,6 +29,12 @@ export const clinicImages = {
     width: 800,
     height: 600,
   },
+  addictionSign: {
+    src: "/images/khorshid-addiction-sign.jpg",
+    alt: "تابلو ترک اعتیاد خورشید — مرکز درمان سوء مصرف مواد در مشهد",
+    width: 1200,
+    height: 900,
+  },
   buildingExterior: {
     src: "/images/khorshid-clinic-building-exterior.jpg",
     alt: "نمای بیرونی ساختمان سامان — کلینیک خورشید مشهد",
