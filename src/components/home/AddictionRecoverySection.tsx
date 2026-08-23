@@ -9,29 +9,38 @@ function RecoveryIcon({ type }: { type: AddictionRecoveryItem["icon"] }) {
   const props = { width: 26, height: 26, viewBox: "0 0 24 24", fill: "none", "aria-hidden": true as const };
 
   switch (type) {
-    case "pill":
-      return (
-        <svg {...props}>
-          <rect x="4" y="8" width="16" height="8" rx="4" stroke="white" strokeWidth="1.8" />
-          <line x1="12" y1="8" x2="12" y2="16" stroke="white" strokeWidth="1.8" />
-        </svg>
-      );
     case "crystal":
       return (
         <svg {...props}>
           <path d="M12 3l7 7-7 13L5 10l7-7z" stroke="white" strokeWidth="1.8" strokeLinejoin="round" />
         </svg>
       );
-    case "leaf":
+    case "crack":
       return (
         <svg {...props}>
-          <path
-            d="M12 21c-4-4-6-8-6-12a6 6 0 0 1 12 0c0 4-2 8-6 12z"
-            stroke="white"
-            strokeWidth="1.8"
-            strokeLinejoin="round"
-          />
-          <path d="M12 21V9" stroke="white" strokeWidth="1.8" />
+          <path d="M8 18l4-12 4 12" stroke="white" strokeWidth="1.8" strokeLinejoin="round" />
+          <path d="M7 14h10" stroke="white" strokeWidth="1.8" />
+        </svg>
+      );
+    case "tramadol":
+      return (
+        <svg {...props}>
+          <rect x="7" y="7" width="10" height="10" rx="2" stroke="white" strokeWidth="1.8" />
+          <path d="M12 7v10M7 12h10" stroke="white" strokeWidth="1.8" />
+        </svg>
+      );
+    case "methadone":
+      return (
+        <svg {...props}>
+          <rect x="4" y="8" width="16" height="8" rx="4" stroke="white" strokeWidth="1.8" />
+          <line x1="12" y1="8" x2="12" y2="16" stroke="white" strokeWidth="1.8" />
+        </svg>
+      );
+    case "buprenorphine":
+      return (
+        <svg {...props}>
+          <circle cx="12" cy="12" r="7" stroke="white" strokeWidth="1.8" />
+          <path d="M12 8v8M8 12h8" stroke="white" strokeWidth="1.8" />
         </svg>
       );
     case "opium":
@@ -39,13 +48,6 @@ function RecoveryIcon({ type }: { type: AddictionRecoveryItem["icon"] }) {
         <svg {...props}>
           <rect x="6" y="10" width="12" height="8" rx="2" stroke="white" strokeWidth="1.8" />
           <path d="M8 10V8a4 4 0 0 1 8 0v2" stroke="white" strokeWidth="1.8" />
-        </svg>
-      );
-    case "alcohol":
-      return (
-        <svg {...props}>
-          <path d="M9 4h6l-2 8v8H11v-8L9 4z" stroke="white" strokeWidth="1.8" strokeLinejoin="round" />
-          <line x1="8" y1="20" x2="16" y2="20" stroke="white" strokeWidth="1.8" />
         </svg>
       );
     case "hashish":
@@ -62,18 +64,11 @@ function RecoveryIcon({ type }: { type: AddictionRecoveryItem["icon"] }) {
           <path d="M9 14h6" stroke="white" strokeWidth="1.8" />
         </svg>
       );
-    case "psychedelic":
+    case "chemical":
       return (
         <svg {...props}>
-          <path d="M12 4a8 8 0 1 0 0 16" stroke="white" strokeWidth="1.8" />
-          <circle cx="12" cy="12" r="3" stroke="white" strokeWidth="1.8" />
-        </svg>
-      );
-    case "powder":
-      return (
-        <svg {...props}>
-          <path d="M7 8h10l-2 12H9L7 8z" stroke="white" strokeWidth="1.8" strokeLinejoin="round" />
-          <path d="M9 5h6" stroke="white" strokeWidth="1.8" />
+          <path d="M9 3h6v4l4 10H5L9 7V3z" stroke="white" strokeWidth="1.8" strokeLinejoin="round" />
+          <path d="M8 14h8" stroke="white" strokeWidth="1.8" />
         </svg>
       );
   }

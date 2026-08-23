@@ -1,3 +1,5 @@
+import { treatableSubstancesAnswer } from "./treatableSubstances";
+
 export type FAQItem = {
   question: string;
   answer: string;
@@ -24,18 +26,7 @@ export const faqItems: FAQItem[] = [
   },
   {
     question: "ترک چه نوع موادی در کلینیک انجام می‌شود؟",
-    answer: [
-      "ترک انواع مواد زیر در کلینیک انجام می‌شود:",
-      "تریاک و شیره",
-      "هروئین",
-      "کریستال (کراک)",
-      "ترامادول",
-      "متادون",
-      "بوپرنورفین (B2)",
-      "شیشه",
-      "حشیش و گل (ماری‌جوانا)",
-      "کمیکال",
-    ].join("\n"),
+    answer: treatableSubstancesAnswer,
   },
   {
     question: "آیا خانواده می‌تواند ابتدا با کلینیک تماس بگیرد؟",

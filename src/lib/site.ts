@@ -28,9 +28,9 @@ export const siteConfig = {
   lang: "fa",
   direction: "rtl" as const,
   licenses: [
-    "پروانه مطب",
-    "مجوز MMT",
-    "پروانه بهره‌برداری ترک اعتیاد",
+    { title: "پروانه مطب", issuer: "نظام پزشکی" },
+    { title: "مدرک MMT", issuer: "وزارت بهداشت" },
+    { title: "پروانه بهره‌برداری", issuer: "وزارت بهداشت" },
   ],
   licensesIssuer: "وزارت بهداشت و نظام پزشکی",
   licenseStatement: "دارای مجوز رسمی از وزارت بهداشت و درمان",

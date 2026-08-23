@@ -39,7 +39,7 @@ export default function AboutPage() {
           <div className="mb-12">
             <SectionHeader
               title="مدارک و مجوزها"
-              description={`کلینیک خورشید دارای پروانه مطب، مجوز MMT و پروانه بهره‌برداری ترک اعتیاد از ${siteConfig.licensesIssuer} است.`}
+              description="کلینیک خورشید دارای پروانه مطب از نظام پزشکی، مدرک MMT و پروانه بهره‌برداری از وزارت بهداشت است."
             />
             <LicensesList />
           </div>

@@ -18,12 +18,12 @@ export function LicensesList({ className = "", variant = "light" }: LicensesList
       <ul className="grid sm:grid-cols-3 gap-4">
         {siteConfig.licenses.map((license) => (
           <li
-            key={license}
+            key={license.title}
             className={`rounded-[16px] border p-5 ${cardClass}`}
           >
-            <p className="font-bold leading-relaxed">{license}</p>
+            <p className="font-bold leading-relaxed">{license.title}</p>
             <p className={`mt-2 text-sm ${subtitleClass}`}>
-              از {siteConfig.licensesIssuer}
+              از {license.issuer}
             </p>
           </li>
         ))}

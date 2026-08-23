@@ -12,7 +12,7 @@ export function CredentialsSection() {
           id="credentials-title"
           label="مجوزها و مدارک"
           title="مدارک رسمی کلینیک خورشید"
-          description={`کلینیک خورشید دارای پروانه مطب، مجوز MMT و پروانه بهره‌برداری ترک اعتیاد از ${siteConfig.licensesIssuer} است.`}
+          description="کلینیک خورشید دارای پروانه مطب از نظام پزشکی، مدرک MMT و پروانه بهره‌برداری از وزارت بهداشت است."
           centered
         />
         <LicensesList className="max-w-4xl mx-auto mb-12" />

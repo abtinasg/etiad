@@ -126,7 +126,7 @@ export default async function DoctorDetailPage({ params }: Props) {
             <div>
               <dt className="text-sm font-semibold text-text-secondary">مدارک کلینیک</dt>
               <dd className="text-text">
-                پروانه مطب، مجوز MMT و پروانه بهره‌برداری ترک اعتیاد از {siteConfig.licensesIssuer}
+                پروانه مطب از نظام پزشکی، مدرک MMT و پروانه بهره‌برداری از وزارت بهداشت
               </dd>
             </div>
             <div>
