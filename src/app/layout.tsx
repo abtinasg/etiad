@@ -46,8 +46,13 @@ export default function RootLayout({
         <JsonLd data={organizationJsonLd()} />
         <JsonLd data={websiteJsonLd()} />
         <Analytics />
-        <UtilityBar />
-        <Header />
+        <div
+          id="site-header"
+          className="sticky top-0 z-50 bg-bg-warm/95 backdrop-blur-md border-b border-border safe-area-pt"
+        >
+          <UtilityBar />
+          <Header />
+        </div>
         <main id="main">{children}</main>
         <Footer />
         <StickyMobileCTA />

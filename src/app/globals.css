@@ -54,8 +54,20 @@
   font-display: swap;
 }
 
+:root {
+  --site-header-h: 7.5rem;
+}
+
 html {
   scroll-behavior: smooth;
+}
+
+.safe-area-pt {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+body.mobile-menu-open .mobile-sticky-cta {
+  display: none;
 }
 
 body {
