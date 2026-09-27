@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { siteConfig } from "@/lib/site";
 import { SectionHeader } from "@/components/ui/Section";
 import { LicensesList } from "@/components/ui/LicensesList";
 import { clinicGallery } from "@/lib/images";

@@ -68,7 +68,7 @@ export function TeamSection() {
                 </ul>
                 <div className="mt-4 flex flex-wrap items-center gap-3 sm:mt-8 sm:gap-4">
                   <Button href={`/doctors/${doctor.slug}`} variant="primary" size="sm" className="sm:!px-5 sm:!py-3">
-                    مشاهده پروفایل
+                    پروفایل {doctor.name}
                   </Button>
                   <Link
                     href="/doctors"

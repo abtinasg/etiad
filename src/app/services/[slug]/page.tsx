@@ -2,7 +2,6 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getServiceBySlug, allServices } from "@/lib/data/services";
 import { createServiceMetadata, createDraftMetadata } from "@/lib/metadata";
-import { siteConfig } from "@/lib/site";
 import { Container } from "@/components/ui/Section";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { Button } from "@/components/ui/Button";
@@ -116,7 +115,7 @@ export default async function ServiceDetailPage({ params }: Props) {
 
           {service.needsVerification && (
             <p className="text-sm text-text-secondary bg-sage-light border border-border rounded-[12px] p-4 mb-8 text-center">
-              جزئیات این خدمت {siteConfig.needsVerification} است.
+              برای اطلاع از جزئیات و شرایط ارائه این خدمت با کلینیک تماس بگیرید.
             </p>
           )}
 

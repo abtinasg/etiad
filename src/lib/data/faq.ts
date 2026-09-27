@@ -3,7 +3,6 @@ import { treatableSubstancesAnswer } from "./treatableSubstances";
 export type FAQItem = {
   question: string;
   answer: string;
-  needsClinicConfirmation?: boolean;
 };
 
 export const faqItems: FAQItem[] = [
@@ -37,11 +36,5 @@ export const faqItems: FAQItem[] = [
     question: "روند شروع درمان چگونه است؟",
     answer:
       "ابتدا تماس اولیه با کلینیک انجام می‌شود. سپس ارزیابی شرایط فرد توسط تیم درمان انجام می‌گیرد و بر اساس آن، مسیر درمان پیشنهاد می‌شود.",
-  },
-  {
-    question: "آیا اطلاعات مراجعه‌کنندگان محرمانه است؟",
-    answer:
-      "اطلاعات مراجعان مطابق سیاست حفظ حریم خصوصی کلینیک مدیریت می‌شود. [نیازمند تأیید سیاست]",
-    needsClinicConfirmation: true,
   },
 ];

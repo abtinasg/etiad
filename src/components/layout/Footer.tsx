@@ -9,6 +9,7 @@ const serviceLinks = [
 ];
 
 const guideLinks = [
+  { href: "/addiction-treatment-mashhad", label: "کلینیک ترک اعتیاد مشهد" },
   { href: "/family-guide", label: "راهنمای خانواده" },
   { href: "/faq", label: "سوالات متداول" },
   { href: "/addiction-consultation-mashhad", label: "مشاوره اعتیاد مشهد" },
@@ -74,6 +75,7 @@ export function Footer() {
             <Link href="/doctors" className="hover:text-white">تیم درمان</Link>
             <Link href="/articles" className="hover:text-white">مقالات</Link>
             <Link href="/contact" className="hover:text-white">تماس</Link>
+            <Link href="/privacy" className="hover:text-white">حریم خصوصی</Link>
           </div>
         </div>
 

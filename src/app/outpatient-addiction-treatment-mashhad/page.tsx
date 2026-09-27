@@ -38,7 +38,7 @@ export default function OutpatientTreatmentPage() {
             انتخاب مسیر مناسب باید پس از ارزیابی توسط تیم درمان انجام گیرد.
           </p>
           <p className="text-text-secondary mb-8">
-            {siteConfig.needsClinicAnswer} — جزئیات درمان سرپایی در کلینیک خورشید.
+            خدمات کلینیک خورشید به‌صورت سرپایی و تحت نظارت پزشک، روانشناس، مشاور و پرستار ارائه می‌شود. برای بررسی مناسب‌بودن این شیوه درمان، ارزیابی شرایط فرد ضروری است.
           </p>
           <p className="text-text-secondary mb-8">
             مطالعه:

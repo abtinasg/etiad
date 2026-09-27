@@ -5,8 +5,6 @@ import { FAQAccordion } from "@/components/ui/FAQAccordion";
 import { faqItems } from "@/lib/data/faq";
 import { JsonLd, breadcrumbJsonLd, faqJsonLd } from "@/components/seo/JsonLd";
 
-const verifiedFaqItems = faqItems.filter((item) => !item.needsClinicConfirmation);
-
 export const metadata = createPageMetadata({
   title: "سوالات متداول | کلینیک ترک اعتیاد خورشید مشهد",
   description:
@@ -24,8 +22,8 @@ export default function FAQPage() {
             { name: "سوالات متداول" },
           ])}
         />
-        {verifiedFaqItems.length > 0 && (
-          <JsonLd data={faqJsonLd(verifiedFaqItems)} />
+        {faqItems.length > 0 && (
+          <JsonLd data={faqJsonLd(faqItems)} />
         )}
         <Breadcrumb items={[{ label: "خانه", href: "/" }, { label: "سوالات متداول" }]} />
         <SectionHeader

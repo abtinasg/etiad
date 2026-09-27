@@ -15,6 +15,16 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     path: "/",
   }),
+  applicationName: siteConfig.name,
+  authors: [{ name: siteConfig.name, url: siteConfig.url }],
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
+  category: "healthcare",
+  formatDetection: {
+    telephone: false,
+    address: false,
+    email: false,
+  },
   manifest: "/site.webmanifest",
 };
 

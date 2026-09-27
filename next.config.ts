@@ -34,6 +34,41 @@ const nextConfig: NextConfig = {
         destination: "/articles/addiction-relapse",
         permanent: true,
       },
+      {
+        source: "/doctors/dr-afsari",
+        destination: "/doctors/dr-hashem-siadati",
+        permanent: true,
+      },
+      {
+        source: "/services/initial-assessment",
+        destination: "/addiction-treatment-mashhad",
+        permanent: true,
+      },
+      {
+        source: "/services/addiction-consultation",
+        destination: "/services/individual-counseling",
+        permanent: true,
+      },
+      {
+        source: "/services/psychology-services",
+        destination: "/services/individual-counseling",
+        permanent: true,
+      },
+      {
+        source: "/services/family-counseling",
+        destination: "/services/family-therapy",
+        permanent: true,
+      },
+      {
+        source: "/services/treatment-followup",
+        destination: "/services/aftercare",
+        permanent: true,
+      },
+      {
+        source: "/services/relapse-prevention",
+        destination: "/services/aftercare",
+        permanent: true,
+      },
     ];
   },
 };

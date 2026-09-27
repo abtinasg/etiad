@@ -6,6 +6,7 @@ import { doctors } from "@/lib/data/doctors";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = siteConfig.url;
+  const contentUpdatedAt = new Date("2026-09-27");
 
   const staticPages = [
     "",
@@ -16,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/articles",
     "/faq",
     "/contact",
+    "/privacy",
     "/addiction-treatment-mashhad",
     "/addiction-consultation-mashhad",
     "/outpatient-addiction-treatment-mashhad",
@@ -23,7 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const servicePages = getPublishedServices().map((s) => ({
     url: `${base}/services/${s.slug}`,
-    lastModified: new Date(),
+    lastModified: contentUpdatedAt,
     changeFrequency: "monthly" as const,
     priority: 0.8,
   }));
@@ -37,17 +39,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const doctorPages = doctors.map((d) => ({
     url: `${base}/doctors/${d.slug}`,
-    lastModified: new Date(),
+    lastModified: contentUpdatedAt,
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
 
   return [
     ...staticPages.map((path) => ({
-      url: `${base}${path}`,
-      lastModified: new Date(),
-      changeFrequency: "weekly" as const,
-      priority: path === "" ? 1 : 0.9,
+      url: new URL(path || "/", base).toString(),
+      lastModified: contentUpdatedAt,
+      changeFrequency: path === "" ? ("weekly" as const) : ("monthly" as const),
+      priority: path === "" ? 1 : 0.8,
     })),
     ...servicePages,
     ...articlePages,

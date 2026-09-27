@@ -25,8 +25,8 @@ export default function DoctorsPage() {
         />
         <Breadcrumb items={[{ label: "خانه", href: "/" }, { label: "تیم درمان" }]} />
         <SectionHeader
-          title="تیم درمان کلینیک خورشید"
-          description="پزشک درمانگر اعتیاد، روانشناس و مشاور، و پرستار کلینیک خورشید."
+          title="دکتر سید هاشم سیادتی و تیم درمان کلینیک خورشید"
+          description="دکتر سید هاشم سیادتی، پزشک درمانگر اعتیاد و مسئول فنی کلینیک، با همکاری روانشناس، مشاور و پرستار."
         />
         <div className="max-w-5xl">
           {doctors.map((doctor) => (

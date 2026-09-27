@@ -44,6 +44,8 @@ export default async function DoctorDetailPage({ params }: Props) {
             slug: doctor.slug,
             image: doctor.image,
             identifier: doctor.registrationNumber,
+            alternateNames: doctor.alternateNames,
+            sameAs: doctor.sameAs,
           })}
         />
         <JsonLd
@@ -96,7 +98,7 @@ export default async function DoctorDetailPage({ params }: Props) {
               <div className="prose-medical mb-8">
                 <p>{doctor.bio}</p>
               </div>
-              {doctor.slug === "dr-afsari" && (
+              {doctor.slug === "dr-hashem-siadati" && (
                 <div className="img-office-wrap rounded-[16px] border border-border">
                   <Image
                     src="/images/khorshid-clinic-doctor-office.jpg"
@@ -113,15 +115,15 @@ export default async function DoctorDetailPage({ params }: Props) {
           <dl className="space-y-4 mb-10">
             <div>
               <dt className="text-sm font-semibold text-text-secondary">تحصیلات</dt>
-              <dd className="text-text">{doctor.education ?? "[نیازمند تأیید مشتری]"}</dd>
+              <dd className="text-text">{doctor.education ?? "اطلاعات در پروفایل ثبت نشده است."}</dd>
             </div>
             <div>
               <dt className="text-sm font-semibold text-text-secondary">سوابق</dt>
-              <dd className="text-text">{doctor.experience ?? "[نیازمند تأیید مشتری]"}</dd>
+              <dd className="text-text">{doctor.experience ?? "اطلاعات در پروفایل ثبت نشده است."}</dd>
             </div>
             <div>
               <dt className="text-sm font-semibold text-text-secondary">شماره نظام پزشکی</dt>
-              <dd className="text-text">{doctor.registrationNumber ?? "[نیازمند تأیید مشتری]"}</dd>
+              <dd className="text-text">{doctor.registrationNumber ?? "اطلاعات در پروفایل ثبت نشده است."}</dd>
             </div>
             <div>
               <dt className="text-sm font-semibold text-text-secondary">مدارک کلینیک</dt>

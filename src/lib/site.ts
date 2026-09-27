@@ -1,12 +1,24 @@
 export const siteConfig = {
   name: "کلینیک ترک اعتیاد خورشید مشهد",
-  shortName: "کلینیک خورشید مشهد",
+  shortName: "کلینیک ترک اعتیاد خورشید",
   brand: "خورشید",
   brandSub: "مرکز درمان اختلالات مصرف مواد",
+  alternateNames: [
+    "کلینیک ترک اعتیاد خورشید",
+    "کلینیک اعتیاد خورشید مشهد",
+    "کلینیک خورشید مشهد",
+  ],
+  sameAs: [
+    "https://doctoreto.com/center/khorshid-mashhad-clinic/AkGnbG",
+    "https://balad.ir/p/مرکز-درمان-سوء-مصرف-مواد-ترک-اعتیاد-خورشید-mashhad_drug-addiction-treatment-center-3FiMJad4a7lSub",
+    "https://dr-koja.ir/center/کلینیک-ترک-اعتیاد-خورشید-مشهد-4118",
+  ],
   description:
-    "کلینیک ترک اعتیاد خورشید در مشهد با ارائه خدمات ارزیابی، مشاوره و درمان اختلالات مصرف مواد. جهت دریافت اطلاعات و هماهنگی مراجعه با کلینیک تماس بگیرید.",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://khorshid-clinic.ir",
+    "کلینیک ترک اعتیاد خورشید مشهد با مسئولیت فنی دکتر سید هاشم سیادتی؛ ارائه خدمات ارزیابی، مشاوره و درمان اختلالات مصرف مواد در وکیل‌آباد مشهد.",
+  url:
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.tarketiadkhorshid.ir",
   phone: "09335754070",
+  phoneInternational: "+989335754070",
   phoneTel: "tel:09335754070",
   phoneDisplay: "۰۹۳۳۵۷۵۴۰۷۰",
   address:
@@ -45,8 +57,6 @@ export const siteConfig = {
     "مطالب این وب‌سایت صرفاً برای افزایش آگاهی عمومی است و جایزین تشخیص یا توصیه پزشک نیست.",
   contentDisclaimer:
     "اطلاعات این سایت جایگزین ارزیابی یا توصیه پزشک نیست.",
-  needsVerification: "[نیازمند تأیید مشتری]",
-  needsClinicAnswer: "[پاسخ باید توسط کلینیک تأیید شود]",
 };
 
 export type BreadcrumbItem = {

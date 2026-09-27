@@ -39,6 +39,7 @@ NEXT_PUBLIC_SITE_URL=https://your-domain.ir
 | `/articles/[slug]` | Article template |
 | `/faq` | FAQ |
 | `/contact` | Contact |
+| `/privacy` | Website privacy information |
 | `/addiction-treatment-mashhad` | Local SEO landing |
 | `/addiction-consultation-mashhad` | Consultation landing |
 | `/outpatient-addiction-treatment-mashhad` | Outpatient landing |
@@ -59,9 +60,16 @@ Before publishing, confirm with the clinic:
 ## SEO
 
 - Unique metadata per page via `src/lib/metadata.ts`
-- JSON-LD: Organization, WebSite, Article, Person, BreadcrumbList
+- JSON-LD: MedicalClinic/LocalBusiness, WebSite, WebPage, Article, Physician, FAQPage, BreadcrumbList
 - `sitemap.xml` and `robots.txt` auto-generated
 - Semantic HTML, RTL, accessibility patterns
+
+### After deployment
+
+1. Set `NEXT_PUBLIC_SITE_URL` to the final canonical HTTPS domain.
+2. Verify the domain in Google Search Console and set `NEXT_PUBLIC_GSC_VERIFICATION` if using an HTML meta verification token.
+3. Submit `https://www.tarketiadkhorshid.ir/sitemap.xml` in Search Console and request indexing for the home page.
+4. Keep the clinic name, address, phone number and opening hours identical on the website, Google Business Profile and medical directories.
 
 ## Design system
 

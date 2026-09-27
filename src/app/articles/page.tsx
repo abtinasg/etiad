@@ -26,7 +26,7 @@ export default function ArticlesPage() {
         <Breadcrumb items={[{ label: "خانه", href: "/" }, { label: "مقالات" }]} />
         <SectionHeader
           title="راهنمای درمان و خانواده"
-          description="مطالب آموزشی برای آشنایی بیشتر با فرآیند درمان. تمامی مطالب نیازمند بازبینی پزشکی هستند."
+          description="مطالب آموزشی برای آشنایی بیشتر با فرآیند درمان، نقش خانواده و پیشگیری از بازگشت به مصرف، همراه با منابع علمی و اطلاعات نویسنده."
         />
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {articles.map((article) => (

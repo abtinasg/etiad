@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { siteConfig } from "./site";
-import { defaultOgImage, seoConfig } from "./seo";
+import { defaultOgImage, defaultOgImageSize, seoConfig } from "./seo";
 
 type PageMetadataOptions = {
   title: string;
@@ -19,12 +19,12 @@ export function createPageMetadata({
   noIndex = false,
   type = "website",
 }: PageMetadataOptions): Metadata {
-  const url = `${siteConfig.url}${path}`;
+  const url = new URL(path || "/", siteConfig.url).toString();
   const image = ogImage
     ? ogImage.startsWith("http")
       ? ogImage
-      : `${siteConfig.url}${ogImage}`
-    : `${siteConfig.url}${defaultOgImage}`;
+      : new URL(ogImage, siteConfig.url).toString()
+    : new URL(defaultOgImage, siteConfig.url).toString();
 
   const metadata: Metadata = {
     title,
@@ -40,7 +40,7 @@ export function createPageMetadata({
       siteName: siteConfig.name,
       locale: siteConfig.locale,
       type,
-      images: [{ url: image, alt: siteConfig.name, width: 1200, height: 630 }],
+      images: [{ url: image, alt: title, ...defaultOgImageSize }],
     },
     twitter: {
       card: "summary_large_image",
@@ -73,7 +73,7 @@ export function createPageMetadata({
 
 export function createServiceMetadata(serviceName: string, description: string, slug: string) {
   return createPageMetadata({
-    title: `${serviceName} در مشهد | کلینیک خورشید`,
+    title: `${serviceName} در مشهد | کلینیک ترک اعتیاد خورشید`,
     description,
     path: `/services/${slug}`,
   });
@@ -91,7 +91,7 @@ export function createArticleMetadata(title: string, description: string, slug: 
 
 export function createDoctorMetadata(name: string, description: string, slug: string) {
   return createPageMetadata({
-    title: `${name} | کلینیک خورشید مشهد`,
+    title: `${name} | کلینیک ترک اعتیاد خورشید مشهد`,
     description,
     path: `/doctors/${slug}`,
   });

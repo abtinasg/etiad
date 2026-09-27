@@ -1,6 +1,8 @@
 import { siteConfig } from "@/lib/site";
 import { clinicImages } from "@/lib/images";
 import { defaultOgImage } from "@/lib/seo";
+import { getPublishedServices } from "@/lib/data/services";
+import { doctors } from "@/lib/data/doctors";
 
 type JsonLdProps = {
   data: Record<string, unknown> | Record<string, unknown>[];
@@ -10,7 +12,9 @@ export function JsonLd({ data }: JsonLdProps) {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify(data).replace(/</g, "\\u003c"),
+      }}
     />
   );
 }
@@ -18,21 +22,26 @@ export function JsonLd({ data }: JsonLdProps) {
 function clinicBase() {
   return {
     "@type": "MedicalClinic",
+    "@id": `${siteConfig.url}/#clinic`,
     name: siteConfig.name,
     url: siteConfig.url,
-    telephone: siteConfig.phone,
+    telephone: siteConfig.phoneInternational,
   };
 }
 
 export function organizationJsonLd() {
+  const services = getPublishedServices();
+  const doctor = doctors[0];
+
   return {
     "@context": "https://schema.org",
     "@type": ["MedicalClinic", "LocalBusiness"],
     "@id": `${siteConfig.url}/#clinic`,
     name: siteConfig.name,
-    alternateName: siteConfig.brand,
+    alternateName: siteConfig.alternateNames,
+    sameAs: siteConfig.sameAs,
     url: siteConfig.url,
-    telephone: siteConfig.phone,
+    telephone: siteConfig.phoneInternational,
     description: siteConfig.description,
     image: `${siteConfig.url}${clinicImages.buildingExterior.src}`,
     logo: {
@@ -56,6 +65,7 @@ export function organizationJsonLd() {
       "@type": "City",
       name: "مشهد",
     },
+    slogan: siteConfig.mission,
     availableLanguage: ["fa", "Persian"],
     openingHoursSpecification: [
       {
@@ -75,13 +85,39 @@ export function organizationJsonLd() {
     ],
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: siteConfig.phone,
+      telephone: siteConfig.phoneInternational,
       contactType: "customer service",
       availableLanguage: ["Persian", "fa"],
       areaServed: "IR",
     },
-    priceRange: "$$",
-    medicalSpecialty: "Substance Use Disorder Treatment",
+    employee: doctor
+      ? {
+          "@type": "Physician",
+          "@id": `${siteConfig.url}/doctors/${doctor.slug}#physician`,
+          name: doctor.name,
+          jobTitle: doctor.title,
+          url: `${siteConfig.url}/doctors/${doctor.slug}`,
+          sameAs: doctor.sameAs,
+        }
+      : undefined,
+    knowsAbout: [
+      "درمان اختلالات مصرف مواد",
+      "درمان سرپایی اعتیاد",
+      ...services.map((service) => service.title),
+    ],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "خدمات درمانی کلینیک خورشید",
+      itemListElement: services.map((service) => ({
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "MedicalTherapy",
+          name: service.title,
+          description: service.shortDescription,
+          url: `${siteConfig.url}/services/${service.slug}`,
+        },
+      })),
+    },
   };
 }
 
@@ -91,10 +127,36 @@ export function websiteJsonLd() {
     "@type": "WebSite",
     "@id": `${siteConfig.url}/#website`,
     name: siteConfig.name,
+    alternateName: siteConfig.alternateNames,
     url: siteConfig.url,
     inLanguage: siteConfig.locale,
     publisher: {
       "@id": `${siteConfig.url}/#clinic`,
+    },
+  };
+}
+
+export function homePageJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${siteConfig.url}/#webpage`,
+    url: siteConfig.url,
+    name: siteConfig.name,
+    description: siteConfig.description,
+    inLanguage: siteConfig.locale,
+    isPartOf: {
+      "@id": `${siteConfig.url}/#website`,
+    },
+    about: {
+      "@id": `${siteConfig.url}/#clinic`,
+    },
+    mainEntity: {
+      "@id": `${siteConfig.url}/#clinic`,
+    },
+    primaryImageOfPage: {
+      "@type": "ImageObject",
+      url: `${siteConfig.url}${defaultOgImage}`,
     },
   };
 }
@@ -166,18 +228,35 @@ export function physicianJsonLd(doctor: {
   slug: string;
   image?: string;
   identifier?: string;
+  alternateNames?: string[];
+  sameAs?: string[];
 }) {
+  const url = `${siteConfig.url}/doctors/${doctor.slug}`;
+
   return {
     "@context": "https://schema.org",
     "@type": "Physician",
+    "@id": `${url}#physician`,
     name: doctor.name,
+    alternateName: doctor.alternateNames,
+    sameAs: doctor.sameAs,
     jobTitle: doctor.title,
     medicalSpecialty: doctor.specialty,
     image: doctor.image ? `${siteConfig.url}${doctor.image}` : undefined,
-    identifier: doctor.identifier,
-    worksFor: clinicBase(),
-    memberOf: clinicBase(),
-    url: `${siteConfig.url}/doctors/${doctor.slug}`,
+    identifier: doctor.identifier
+      ? {
+          "@type": "PropertyValue",
+          propertyID: "IRIMC",
+          value: doctor.identifier,
+        }
+      : undefined,
+    worksFor: { "@id": `${siteConfig.url}/#clinic` },
+    memberOf: { "@id": `${siteConfig.url}/#clinic` },
+    url,
+    mainEntityOfPage: {
+      "@type": "ProfilePage",
+      "@id": url,
+    },
     knowsAbout: doctor.specialty,
   };
 }

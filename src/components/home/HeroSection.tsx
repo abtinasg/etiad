@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { siteConfig } from "@/lib/site";
 import { clinicImages } from "@/lib/images";
 import { Button } from "@/components/ui/Button";
@@ -20,10 +21,20 @@ export function HeroSection() {
               کلینیک ترک اعتیاد خورشید در مشهد
             </p>
             <h1 id="hero-title" className="text-2xl sm:text-[32px] lg:text-[52px] font-extrabold text-primary leading-[1.35] mb-6 break-words">
-              شروع درمان اعتیاد، با ارزیابی تخصصی و بدون قضاوت
+              کلینیک ترک اعتیاد خورشید مشهد
             </h1>
+            <p className="text-xl sm:text-2xl font-bold text-primary leading-relaxed mb-4 max-w-xl">
+              شروع درمان اعتیاد، با ارزیابی تخصصی و بدون قضاوت
+            </p>
             <p className="text-lg text-text-secondary leading-relaxed mb-4 max-w-xl">
-              در کلینیک خورشید، شرایط هر مراجعه‌کننده ابتدا بررسی می‌شود تا مسیر درمان با توجه به وضعیت فرد و نظر تیم درمان مشخص شود.
+              در کلینیک اعتیاد خورشید مشهد، شرایط هر مراجعه‌کننده با مسئولیت فنی{" "}
+              <Link
+                href="/doctors/dr-hashem-siadati"
+                className="font-semibold text-primary underline decoration-accent/50 underline-offset-4 hover:text-accent"
+              >
+                دکتر سید هاشم سیادتی
+              </Link>{" "}
+              و همکاری تیم درمان بررسی می‌شود تا مسیر درمان متناسب با وضعیت فرد مشخص شود.
             </p>
             <p className="text-base font-medium text-primary leading-relaxed mb-4 max-w-xl">
               {siteConfig.mission}
